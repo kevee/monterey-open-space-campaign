@@ -1,0 +1,14 @@
+{
+  "name": "monterey-open-space-campaign",
+  "authors": [
+    "Kevin Miller <kevin@csumb.edu>"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "handlebars": "^4.0.5",
+    "smart-underline": "^4.1.0",
+    "bootstrap": "^3.3.6",
+    "moment": "^2.13.0"
+  }
+}
