@@ -16,6 +16,12 @@ module.exports = function (grunt) {
         }
       }
     },
+    'mos-endorsements': {
+      target : {
+        data : '_dist/data/endorsements.json',
+        endpoint : 'https://mprpd-campaign.prismic.io/api'
+      }
+    },
     'gh-pages': {
       options: {
         base: '_dist',
