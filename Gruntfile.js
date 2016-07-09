@@ -87,7 +87,8 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', ['bower', 'clean', 'copy', 'compass', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['clean', 'copy', 'compass', 'uglify', 'cssmin']);
+  grunt.registerTask('setup', ['bower', 'default']);
 
   grunt.registerTask('deploy', ['default', 'gh-pages']);
 
