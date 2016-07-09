@@ -2,6 +2,13 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    bower: {
+      install: {
+        options: {
+         targetDir : 'bower_components/'
+        }
+      }
+    },
     compass: {
       options: {
         config: 'config.rb',
@@ -80,7 +87,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', ['clean', 'copy', 'compass', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['bower', 'clean', 'copy', 'compass', 'uglify', 'cssmin']);
 
   grunt.registerTask('deploy', ['default', 'gh-pages']);
 
@@ -96,5 +103,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-bower-task');
 
 };
