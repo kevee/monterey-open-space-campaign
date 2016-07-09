@@ -24,8 +24,14 @@ module.exports = function (grunt) {
       }
     },
     'mos-endorsements': {
-      target : {
+      endorsements : {
         data : '_dist/data/endorsements.json',
+        endpoint : 'https://mprpd-campaign.prismic.io/api'
+      }
+    },
+    'mos-pages': {
+      pages : {
+        target : '_dist/',
         endpoint : 'https://mprpd-campaign.prismic.io/api'
       }
     },
