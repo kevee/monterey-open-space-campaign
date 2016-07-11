@@ -7,7 +7,7 @@ node_js:
 before_script:
 
 before_script:
- - node--version
+ - node --version
  - npm install grunt-cli -g
  - npm update -g
  - npm install
