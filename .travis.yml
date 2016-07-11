@@ -2,16 +2,17 @@ language: ruby
 rvm:
 - 2.1
 node_js:
-  - "6.2.2"
+  - "4.4.7"
 
 before_script:
 
 before_script:
+ - node--version
  - npm install grunt-cli -g
  - npm update -g
  - npm install
 
-script: grunt; grunt deploy
+script: grunt setup && grunt deploy
 
 env:
   global:
