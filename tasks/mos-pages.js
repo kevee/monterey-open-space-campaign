@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 
   var Prismic = require('prismic.io').Prismic,
       YAML = require('yamljs'),
-      _ = require('underscore');
+      _ = require('underscore'),
+      pretty = require('pretty');
 
   grunt.registerMultiTask('mos-pages', 'Add pages', function() {
     var that = this,
@@ -17,7 +18,7 @@ module.exports = function(grunt) {
           _.each(response.results, function(page) {
             var meta = {
               layout: that.data.layout,
-              title: page.data[that.data.title].value,
+              title: page.getText(that.data.title),
               data: {}
             };
             _.each(page.data, function(data, index) {
@@ -26,7 +27,7 @@ module.exports = function(grunt) {
             });
             var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
             if(typeof that.data.content !== 'undefined') {
-              content += page.getSliceZone(that.data.content).asHtml();
+              content += pretty(page.getSliceZone(that.data.content).asHtml());
             }
             grunt.file.write(that.data.target + '/' + page.slug + '.html', content);
             grunt.log.oklns('Saved ' + that.data.target + page.slug + '.html');
