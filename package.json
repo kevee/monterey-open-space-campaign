@@ -1,25 +1,5 @@
 {
-  "name": "monterey-open-space-campaign",
-  "description": "Campaign website for Monterey Open Space and Parks",
   "dependencies": {
-    "bower": "^1.7.7",
-    "compass": "^0.1.1",
-    "grunt": "^0.4.5",
-    "grunt-bower": "^0.21.0",
-    "grunt-bower-task": "^0.4.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-compass": "^1.1.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.1",
-    "grunt-contrib-handlebars": "^1.0.0",
-    "grunt-contrib-less": "^1.2.0",
-    "grunt-contrib-uglify": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-gh-pages": "^1.0.0",
-    "pretty": "^1.0.0",
-    "prismic-nodejs": "^1.1.0",
-    "prismic.io": "^3.1.3",
-    "underscore": "^1.8.3",
-    "yamljs": "^0.2.8"
+    "express": "^4.14.0"
   }
 }
