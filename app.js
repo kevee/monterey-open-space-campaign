@@ -1,5 +1,6 @@
 var express = require('express'),
-    https = require('https');
+    https = require('https'),
+    travisPing = require('travis-ping');
 
 var app = express();
 
@@ -13,7 +14,15 @@ app.get('/*',function(request, response, next) {
 });
 
 app.get('/webhook', function(req, res) {
-
+  travisPing.ping(
+    {github_token : process.env.GITHUB_TOKEN},
+    'kevee/monterey-open-space-campaign',
+    {branch: 'master'},
+    function(travisResponse) {
+      res.write(JSON.stringify({ success : true }));
+      res.end();
+    }
+  );
 });
 
 app.listen(app.get('port'), function() {
