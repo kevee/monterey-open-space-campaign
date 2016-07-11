@@ -13,7 +13,7 @@ app.get('/*',function(request, response, next) {
   next();
 });
 
-app.get('/webhook', function(req, res) {
+app.post('/webhook', function(req, res) {
   travisPing.ping(
     {github_token : process.env.GITHUB_TOKEN},
     'kevee/monterey-open-space-campaign',
