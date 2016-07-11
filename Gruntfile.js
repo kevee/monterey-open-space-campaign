@@ -50,6 +50,7 @@ module.exports = function (grunt) {
     'gh-pages': {
       options: {
         base: '_dist',
+        message: 'Update on build #' + process.env.TRAVIS_BUILD_NUMBER,
         repo: (process.env.GITHUB_TOKEN) ? 'https://' + process.env.GITHUB_TOKEN + '@github.com/kevee/monterey-open-space-campaign.git' : false
       },
       src: ['**']
