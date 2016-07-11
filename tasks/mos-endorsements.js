@@ -2,7 +2,8 @@
 
 module.exports = function(grunt) {
 
-  var Prismic = require('prismic.io').Prismic;
+  var Prismic = require('prismic.io').Prismic,
+  Promise = require('es6-promise').polyfill();
 
   grunt.registerMultiTask('mos-endorsements', 'Add endorsements JSON file', function() {
     var that = this,

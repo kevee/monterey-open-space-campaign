@@ -5,7 +5,8 @@ module.exports = function(grunt) {
   var Prismic = require('prismic.io').Prismic,
       YAML = require('yamljs'),
       _ = require('underscore'),
-      pretty = require('pretty');
+      pretty = require('pretty'),
+      Promise = require('es6-promise').polyfill();
 
   grunt.registerMultiTask('mos-pages', 'Add pages', function() {
     var that = this,
