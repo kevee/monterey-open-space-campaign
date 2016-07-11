@@ -32,7 +32,19 @@ module.exports = function (grunt) {
     'mos-pages': {
       pages : {
         target : '_dist/',
-        endpoint : 'https://mprpd-campaign.prismic.io/api'
+        endpoint : 'https://mprpd-campaign.prismic.io/api',
+        layout: 'page',
+        documentType : 'page',
+        title: 'page.title',
+        content: 'page.body'
+      },
+      properties : {
+        target : '_dist/properties/',
+        endpoint : 'https://mprpd-campaign.prismic.io/api',
+        layout: 'page',
+        documentType : 'property',
+        title: 'property.title',
+        content: 'property.body'
       }
     },
     'gh-pages': {
@@ -93,7 +105,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', ['clean', 'copy', 'compass', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['clean', 'copy', 'compass', 'uglify', 'cssmin', 'mos-endorsements', 'mos-pages']);
   grunt.registerTask('setup', ['bower', 'default']);
 
   grunt.registerTask('deploy', ['default', 'gh-pages']);

@@ -13,15 +13,23 @@ module.exports = function(grunt) {
     Prismic.Api(that.data.endpoint, function (err, Api) {
       Api.form('everything')
         .ref(Api.master())
-        .query(Prismic.Predicates.at("document.type", "page")).submit(function (err, response) {
+        .query(Prismic.Predicates.at("document.type", that.data.documentType)).submit(function (err, response) {
           _.each(response.results, function(page) {
             var meta = {
-              layout: 'page',
-              title: page.data['page.title'].value,
-              data: page.data
+              layout: that.data.layout,
+              title: page.data[that.data.title].value,
+              data: {}
             };
+            _.each(page.data, function(data, index) {
+              index = index.split('.').pop();
+              meta.data[index] = data;
+            });
             var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
+            if(typeof that.data.content !== 'undefined') {
+              content += page.getSliceZone(that.data.content).asHtml();
+            }
             grunt.file.write(that.data.target + '/' + page.slug + '.html', content);
+            grunt.log.oklns('Saved ' + that.data.target + page.slug + '.html');
           });
           done();
       });
