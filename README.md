@@ -1,1 +1,0 @@
-# monterey-open-space-campaign
