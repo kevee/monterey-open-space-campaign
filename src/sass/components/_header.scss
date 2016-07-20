@@ -2,6 +2,22 @@ header {
   font-family: $helvetica;
   nav.navbar {
     margin-bottom: 0;
+    background: color($blue, 'dark');
+    border-bottom: color($blue, 'main');
+    .navbar-nav>li>a {
+      color: $white;
+    }
+
+    .navbar-nav>.active>a, {
+      background: color($lime, 'main');
+    }
+    .navbar-brand {
+      color: $white;
+      font-family: $gothic-font;
+      &:hover {
+        color: color($lime, 'main');
+      }
+    }
   }
   a {
     text-decoration: none;
