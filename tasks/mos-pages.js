@@ -30,8 +30,8 @@ module.exports = function(grunt) {
             if(typeof that.data.content !== 'undefined') {
               content += pretty(page.getSliceZone(that.data.content).asHtml());
             }
-            grunt.file.write(that.data.target + '/' + page.slug + '.html', content);
-            grunt.log.oklns('Saved ' + that.data.target + page.slug + '.html');
+            grunt.file.write(that.data.target + '/' + page.uid + '.html', content);
+            grunt.log.oklns('Saved ' + that.data.target + page.uid + '.html');
           });
           done();
       });

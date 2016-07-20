@@ -26,25 +26,17 @@ module.exports = function (grunt) {
     'mos-endorsements': {
       endorsements : {
         data : '_dist/data/endorsements.json',
-        endpoint : 'https://mprpd-campaign.prismic.io/api'
+        endpoint : 'https://citizens-parks-open-space.prismic.io/api'
       }
     },
     'mos-pages': {
       pages : {
         target : '_dist/',
-        endpoint : 'https://mprpd-campaign.prismic.io/api',
+        endpoint : 'https://citizens-parks-open-space.prismic.io/api',
         layout: 'page',
         documentType : 'page',
         title: 'page.title',
         content: 'page.body'
-      },
-      properties : {
-        target : '_dist/properties/',
-        endpoint : 'https://mprpd-campaign.prismic.io/api',
-        layout: 'page',
-        documentType : 'property',
-        title: 'property.title',
-        content: 'property.body'
       }
     },
     'gh-pages': {
@@ -64,6 +56,12 @@ module.exports = function (grunt) {
             src: ['*.html'],
             dest: '_dist/_layouts/'
           },
+          {
+            expand: true,
+            cwd: 'src/includes/',
+            src: ['*.html'],
+            dest: '_dist/_includes/'
+          }
         ]
       }
     },
