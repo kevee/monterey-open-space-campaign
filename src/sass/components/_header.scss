@@ -1,5 +1,8 @@
 header {
   font-family: $helvetica;
+  nav.navbar {
+    margin-bottom: 0;
+  }
   a {
     text-decoration: none;
   }

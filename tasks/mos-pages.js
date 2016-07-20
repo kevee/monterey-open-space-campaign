@@ -22,11 +22,11 @@ module.exports = function(grunt) {
               layout: layout,
               slug: page.uid,
               title: page.getText(that.data.title),
-              data: {}
+              pageData: {}
             };
             _.each(page.data, function(data, index) {
               index = index.split('.').pop();
-              meta.data[index] = data;
+              meta.pageData[index] = data;
             });
             var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
             if(typeof that.data.content !== 'undefined') {
