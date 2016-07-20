@@ -1,0 +1,13 @@
+---
+layout: page
+---
+
+{{ content }}
+
+<ul>
+  {% for endorsement in site.data.endorsements %}
+    <li>
+      {{ endorsement.data['endorsement.name'].value }}
+    </li>
+  {% endfor %}
+</ul>
