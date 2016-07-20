@@ -17,6 +17,9 @@ module.exports = function(grunt) {
         .ref(Api.master())
         .query(Prismic.Predicates.at("document.type", that.data.documentType)).submit(function (err, response) {
           _.each(response.results, function(page) {
+            if(typeof that.data.ignore !== 'undefined' && that.data.ignore.indexOf(page.uid) > -1) {
+              return;
+            }
             var layout = (typeof page.data['page.layout'] !== 'undefined') ? page.getText('page.layout') : that.data.layout;
             var meta = {
               layout: layout,

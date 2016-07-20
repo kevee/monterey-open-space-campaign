@@ -8,12 +8,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Open Space Preservation</a>
+        <a class="navbar-brand" href="index">Open Space Preservation</a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/">Home</a></li>
+          <li{% if page.slug == 'index' %} class="active" {% endif %}><a href="index">Home</a></li>
           <li{% if page.slug == 'about' %} class="active" {% endif %}><a href="about">About</a></li>
           <li{% if page.slug == 'faq' %} class="active" {% endif %}><a href="faq">Questions</a></li>
           <li{% if page.slug == 'endorsements' %} class="active" {% endif %}><a href="endorsements">Endorsements</a></li>
