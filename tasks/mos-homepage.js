@@ -11,7 +11,6 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('mos-homepage', 'Add homepage', function() {
     var that = this,
         done = this.async();
-        console.log(that.data);
     Prismic.Api(that.data.endpoint, function (err, Api) {
       Api.form('everything')
         .ref(Api.master())
