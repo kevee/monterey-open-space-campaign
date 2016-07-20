@@ -86,7 +86,7 @@ module.exports = function (grunt) {
             'bower_components/moment/dist/moment.js',
             'bower_components/smart-underline/js/smart-underline.js',
             'bower_components/bootstrap/dist/js/bootstrap.js',
-            '_dist/js/site.min.js']
+            'src/js/site.js']
         }
       }
     },
