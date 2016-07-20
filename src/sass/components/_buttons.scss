@@ -1,0 +1,11 @@
+a.btn, button.btn {
+  &.btn-lime {
+    background: color($lime, 'dark');
+    color: color($tan, 'dark');
+  }
+
+  &.btn-blue {
+    background: color($blue, 'dark');
+    color: $white;
+  }
+}

@@ -20,6 +20,7 @@ module.exports = function(grunt) {
           var meta = {
             layout: 'homepage',
             slug: 'index',
+            isHome: true,
             pageData: {}
           };
           _.each(page.data, function(data, index) {

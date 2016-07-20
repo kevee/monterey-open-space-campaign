@@ -7,9 +7,18 @@ header {
     .navbar-nav>li>a {
       color: $white;
     }
+    .navbar-toggle .icon-bar {
+      background: $white;
+    }
+    .navbar-toggle {
+      border: 0;
+      &:hover, &:focus {
+        background: none;
+      }
+    }
 
     .navbar-nav>.active>a, {
-      background: color($lime, 'main');
+      background: color($lime, 'dark');
     }
     .navbar-brand {
       color: $white;
