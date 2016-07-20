@@ -1,0 +1,12 @@
+footer {
+  background: color($green, 'main');
+  color: color($green, 'highlight');
+  text-align: center;
+  padding: 20px 0;
+  border-top: color($green, 'dark') 3px solid;
+  margin-top: 15px;
+  font-size: 80%;
+  a {
+  color: color($green, 'highlight');
+  }
+}
