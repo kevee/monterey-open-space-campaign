@@ -27,6 +27,7 @@ app.post('/webhook', function(req, res) {
 });
 
 app.post('/build', function(req, res) {
+  fs.chmodSync('build.sh', 0755);
   execFile('build.sh', function(error, out) {
     console.log(error);
     console.log(out);
