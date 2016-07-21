@@ -4,10 +4,27 @@ layout: page
 
 {{ content }}
 
+<div class="row">
+  {% for endorsement in site.data.endorsements %}
+    {% if endorsement.data['endorsement.featured'].value == 'yes' %}
+      <div class="col-md-3">
+        <img src="{{ endorsement.data['endorsement.image'].value.main.url }}" alt=""/>
+        <h4>
+          {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+        </h4>
+        {% if endorsement.data['endorsement.quote'].value %}
+          <p class="endorsement-quote">{{ endorsement.data['endorsement.quote'].value }}
+        {% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<h2>All endorsements</h2>
 <ul>
   {% for endorsement in site.data.endorsements %}
     <li>
-      {{ endorsement.data['endorsement.name'].value }}
+      {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
     </li>
   {% endfor %}
 </ul>
