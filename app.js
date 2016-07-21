@@ -1,6 +1,7 @@
 var express = require('express'),
     https = require('https'),
-    travisPing = require('travis-ping');
+    travisPing = require('travis-ping'),
+    execFile = require('child_process').execFile;
 
 var app = express();
 
@@ -24,6 +25,12 @@ app.post('/webhook', function(req, res) {
     }
   );
 });
+
+app.post('/build', function(req, res) {
+  execFile('build.sh');
+  res.write(JSON.stringify({ success : true }));
+  res.end();
+})
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
