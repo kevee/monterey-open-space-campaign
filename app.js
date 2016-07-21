@@ -1,5 +1,6 @@
 var express = require('express'),
     https = require('https'),
+    fs = require('fs'),
     travisPing = require('travis-ping'),
     execFile = require('child_process').execFile;
 
