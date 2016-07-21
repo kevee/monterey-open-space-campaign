@@ -110,17 +110,24 @@ module.exports = function (grunt) {
           dest: '_dist/css/style.min.css'
         }]
       }
-    }
+    },
+    watch: {
+      all: {
+        files: ['src/**'],
+        tasks: ['default']
+      }
+    },
   });
 
-  grunt.registerTask('default', ['clean', 'copy', 'compass', 'uglify', 'cssmin', 'mos-endorsements', 'mos-homepage', 'mos-pages']);
-  grunt.registerTask('setup', ['bower', 'default']);
+  grunt.registerTask('default', ['copy', 'compass', 'uglify', 'cssmin', 'mos-endorsements', 'mos-homepage', 'mos-pages']);
+  grunt.registerTask('setup', ['bower', 'clean', 'default']);
 
   grunt.registerTask('deploy', ['default', 'gh-pages']);
 
 
   grunt.loadTasks('tasks');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
