@@ -27,7 +27,10 @@ app.post('/webhook', function(req, res) {
 });
 
 app.post('/build', function(req, res) {
-  execFile('build.sh');
+  execFile('build.sh', function(error, out) {
+    console.log(error);
+    console.log(out);
+  });
   res.write(JSON.stringify({ success : true }));
   res.end();
 })
