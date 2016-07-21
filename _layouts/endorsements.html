@@ -7,6 +7,7 @@ layout: page
 <div class="row">
   {% for endorsement in site.data.endorsements %}
     {% if endorsement.data['endorsement.featured'].value == 'yes' %}
+    {% cycle '', '', '</div><div class="row">' %}
       <div class="col-md-3">
         <img src="{{ endorsement.data['endorsement.image'].value.main.url }}" alt=""/>
         <h4>

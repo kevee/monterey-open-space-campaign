@@ -8,33 +8,30 @@ layout: html
 <div class="section homepage-section no-bottom action action-primary">
   <div class="container content">
     <div class="row">
-      <div class="col-md-4">
-        <a href="volunteer" class="btn btn-lg btn-block btn-lime">Sign up</a>
-        <p>Get more involved as a volunteer.</p>
-      </div>
-      <div class="col-md-4">
-        <a href="endorse" class="btn btn-lg btn-block btn-lime">Endorse</a>
-        <p>Add your name to the growing list of public supporters.</p>
-      </div>
-      <div class="col-md-4">
-        <a href="donate" class="btn btn-lg btn-block btn-lime">Donate</a>
-        <p>Help our grassroots campaign grow.</p>
-      </div>
+      {% for action in page.pageData.actions.value %}
+        <div class="col-md-4">
+          <a href="{{ action.link.value }}">
+            <img src="{{ action.image.value.main.url }}" alt="{{ action.tagline.value }}">
+          </a>
+          <a href="{{ action.link.value }}" class="btn btn-lg btn-block btn-lime">
+            {{ action.tagline.value }}
+          </a>
+          <p>{{ action.label.value }}</p>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>
 <div class="section no-space vertical homepage-section action action-secondary">
   <div class="container content">
     <div class="row">
-      <div class="col-md-4">
-        <a href="http://RegisterToVote.ca.gov" class="btn btn-lg btn-block btn-blue">Register to vote</a>
-      </div>
-      <div class="col-md-4">
-        <a href="http://www.MontereyCountyElections.us" class="btn btn-lg btn-block btn-blue">Answer questions about voting</a>
-      </div>
-      <div class="col-md-4">
-        <a href="http://www.MPRPD.org" class="btn btn-lg btn-block btn-blue">More about MPRPD</a>
-      </div>
+      {% for info in page.pageData.info.value %}
+        <div class="col-md-4">
+          <a href="{{ info.link.value }}" class="btn btn-lg btn-block btn-blue">
+            {{ info.tagline.value }}
+          </a>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>
