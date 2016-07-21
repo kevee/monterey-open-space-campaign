@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         title: 'page.title',
         content: 'page.body',
         ignore: [
-          
+
         ]
       }
     },
