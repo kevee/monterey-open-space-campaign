@@ -1,7 +1,17 @@
 ---
 layout: html
+title: Citizens for Parks &amp; Open Spaces
 ---
 {% include header.html %}
+{% if page.pageData.hero %}
+  <div class="hero-image" style="background-image: url('{{ page.pageData.hero.value[0].heroImage.value.main.url}}');">
+    <div class="hero-title">
+      <div class="container">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </div>
+  </div>
+{% endif %}
 <div class="container content" id="main-content">
   {{ content }}
 </div>
@@ -11,7 +21,7 @@ layout: html
       {% for action in page.pageData.actions.value %}
         <div class="col-md-4">
           <a href="{{ action.link.value }}">
-            <img src="{{ action.image.value.main.url }}" alt="{{ action.tagline.value }}">
+            <img src="{{ action.image.value.main.url }}" alt="{{ action.tagline.value }}" class="action-image">
           </a>
           <a href="{{ action.link.value }}" class="btn btn-lg btn-block btn-lime">
             {{ action.tagline.value }}
@@ -35,6 +45,24 @@ layout: html
     </div>
   </div>
 </div>
-
+<div class="container">
+  <h3><a href="endorsements">Endorsements</a></h3>
+  <div class="row">
+    {% for endorsement in site.data.endorsements %}
+      {% if endorsement.data['endorsement.featured'].value == 'yes' %}
+      {% cycle '', '', '</div><div class="row">' %}
+        <div class="col-md-3">
+          <img src="{{ endorsement.data['endorsement.image'].value.main.url }}" alt=""/>
+          <h4>
+            {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+          </h4>
+          {% if endorsement.data['endorsement.quote'].value %}
+            <p class="endorsement-quote">{{ endorsement.data['endorsement.quote'].value }}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
 
 {% include footer.html %}
