@@ -122,7 +122,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['copy', 'compass', 'uglify', 'cssmin', 'mos-endorsements', 'mos-homepage', 'mos-pages']);
   grunt.registerTask('setup', ['bower', 'clean', 'default']);
 
-  grunt.registerTask('deploy', ['default','gh-pages']);
+  grunt.registerTask('deploy', ['default', 'gh-pages']);
 
 
   grunt.loadTasks('tasks');
