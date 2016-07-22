@@ -2,9 +2,19 @@
 layout: html
 ---
 {% include header.html %}
-<div class="container content" id="main-content">
-  {{ content }}
+<div id="content">
+{% for section in page.pageData.homepageContent.value %}
+<div class="homepage-content-section" style="background-image: url({{ section.image.value.main.url}});">
+  <div class="homepage-content-section-overlay" style="background-color: {{ section.overlayColor.value }};">
+    <div class="container">
+      {% if section.headline.value %}
+        <h3>{{ section.headline.value }}</h3>
+      {% endif %}
+      {{ section.text }}
+    </div>
+  </div>
 </div>
+{% endfor %}
 <div class="section homepage-section no-bottom action action-primary">
   <div class="container content">
     <div class="row">
@@ -36,5 +46,5 @@ layout: html
   </div>
 </div>
 
-
+</div>
 {% include footer.html %}

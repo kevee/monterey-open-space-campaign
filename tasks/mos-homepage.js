@@ -26,8 +26,12 @@ module.exports = function(grunt) {
             index = index.split('.').pop();
             meta.pageData[index] = data;
           });
+          var group = page.getGroup('homepage.homepageContent');
+          var docs = group ? group.toArray() : [];
+          _.each(docs, function(section, index) {
+            meta.pageData.homepageContent.value[index].text = section.getStructuredText('text').asHtml();
+          });
           var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
-          content += pretty(page.getSliceZone('homepage.body').asHtml());
           grunt.file.write(that.data.target + '/index.html', content);
           grunt.log.oklns('Saved ' + that.data.target + 'index.html');
           done();
