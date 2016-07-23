@@ -18,6 +18,7 @@ module.exports = function(grunt) {
           var page = response.results[0];
           var meta = {
             layout: 'homepage',
+            title: 'Citizens for Parks &amp; Open Space',
             slug: 'index',
             isHome: true,
             pageData: {}

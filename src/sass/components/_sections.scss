@@ -15,4 +15,12 @@
   &.no-bottom {
     margin-bottom: 0;
   }
+  .action-image {
+    margin-bottom: 15px;
+  }
+  @include respond-to('md') {
+    .btn-block {
+      margin-bottom: 15px;
+    }
+  }
 }

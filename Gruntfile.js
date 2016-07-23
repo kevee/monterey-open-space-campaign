@@ -115,6 +115,10 @@ module.exports = function (grunt) {
       all: {
         files: ['src/**'],
         tasks: ['default']
+      },
+      src: {
+        files: ['src/**'],
+        tasks : ['copy', 'compass', 'uglify', 'cssmin']
       }
     },
   });

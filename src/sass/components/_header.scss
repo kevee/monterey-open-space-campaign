@@ -6,6 +6,9 @@ header {
     border-bottom: color($blue, 'main');
     .navbar-nav>li>a {
       color: $white;
+      &:hover, &:focus {
+        color: $white;
+      }
     }
     .navbar-toggle .icon-bar {
       background: $white;
@@ -23,8 +26,8 @@ header {
     .navbar-brand {
       color: $white;
       font-family: $gothic-font;
-      &:hover {
-        color: color($lime, 'main');
+      a:hover, &:hover {
+        color: $white;
       }
     }
   }
