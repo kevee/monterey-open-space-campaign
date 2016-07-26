@@ -13,7 +13,7 @@ title: Citizens for Parks &amp; Open Spaces
   </div>
 {% endif %}
 <div class="container content" id="main-content">
-  <div class="row">
+  <div class="row" id="homepage-content">
     <div class="col-md-9">
       {{ content }}
     </div>
@@ -22,35 +22,28 @@ title: Citizens for Parks &amp; Open Spaces
       <div id="map"></div>
     </div>
   </div>
-</div>
-<div class="section homepage-section no-bottom action action-primary">
-  <div class="container content">
-    <div class="row">
-      {% for action in page.pageData.actions.value %}
-        <div class="col-md-4">
-          <a href="{{ action.link.value }}">
-            <img src="{{ action.image.value.main.url }}" alt="{{ action.tagline.value }}" class="action-image">
-          </a>
-          <a href="{{ action.link.value }}" class="btn btn-lg btn-block btn-lime">
-            {{ action.tagline.value }}
-          </a>
-          <p>{{ action.label.value }}</p>
-        </div>
-      {% endfor %}
-    </div>
+  <h2>How you can help</h2>
+  <div class="row extra-space vertical">
+    {% for action in page.pageData.actions.value %}
+      <div class="col-md-4">
+        <a href="{{ action.link.value }}">
+          <img src="{{ action.image.value.main.url }}" alt="{{ action.tagline.value }}" class="action-image">
+        </a>
+        <a href="{{ action.link.value }}" class="btn btn-lg btn-block btn-lime">
+          {{ action.tagline.value }}
+        </a>
+        <p>{{ action.label.value }}</p>
+      </div>
+    {% endfor %}
   </div>
-</div>
-<div class="section no-space vertical homepage-section action action-secondary">
-  <div class="container content">
-    <div class="row">
-      {% for info in page.pageData.info.value %}
-        <div class="col-md-4">
-          <a href="{{ info.link.value }}" class="btn btn-lg btn-block btn-blue">
-            {{ info.tagline.value }}
-          </a>
-        </div>
-      {% endfor %}
-    </div>
+  <div class="row extra-space vertical">
+    {% for info in page.pageData.info.value %}
+      <div class="col-md-4">
+        <a href="{{ info.link.value }}" class="btn btn-lg btn-block btn-blue">
+          {{ info.tagline.value }}
+        </a>
+      </div>
+    {% endfor %}
   </div>
 </div>
 {% comment %}
@@ -82,7 +75,7 @@ title: Citizens for Parks &amp; Open Spaces
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <p></p>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

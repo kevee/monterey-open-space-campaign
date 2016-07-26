@@ -6,7 +6,7 @@
         $('#map').css('height', '400px');
         return;
       }
-      $('#map').css('height', $('#main-content').height() + 'px');
+      $('#map').css('height', $('#homepage-content').height() + 'px');
     });
     $(window).trigger('resize');
   });
@@ -24,4 +24,9 @@ var mapReady = function() {
   var map = new google.maps.Map(document.getElementById("map"),
       mapOptions);
   map.data.loadGeoJson('js/map.json');
+  map.data.addListener('click', function(event) {
+    $('#map-modal .modal-title').html(event.feature.getProperty('title'));
+    $('#map-modal .modal-body').html(event.feature.getProperty('description'));
+    $('#map-modal').modal('show');
+  });
 };

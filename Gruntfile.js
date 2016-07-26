@@ -82,6 +82,16 @@ module.exports = function (grunt) {
             dest: '_dist/js/'
           }
         ]
+      },
+      cname : {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/',
+            src: ['CNAME'],
+            dest: '_dist/'
+          }
+        ]
       }
     },
     watch: {

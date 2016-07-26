@@ -7,7 +7,8 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Garland Ranch"
+        "title": "Garland Ranch",
+        "description": "<p>This park is home to a variety of landscapes that occur at elevations from 200 to 2,000 feet. From the willow covered banks of the Carmel River through the cottonwood-sycamore stands of the old floodplain, the trails ascend steeply. Atop the northern crest of the Santa Lucia Mountains, the trails encounter open oak savannas and spectacular vistas.</p>"
       },
       "geometry": {
         "type": "Point",
@@ -23,7 +24,8 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Palo Carona Regional park"
+        "title": "Palo Carona Regional park",
+        "descriptoin": "<p>Palo Corona Regional Park is one of Central Coast California’s most significant undeveloped open spaces. In the largest land conservation project in Monterey county history.</p>"
       },
       "geometry": {
         "type": "Point",
@@ -39,7 +41,8 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Frog Pond Wetland Preserve"
+        "title": "Frog Pond Wetland Preserve",
+        "description": "<p>In an increasingly urban world, open spaces such as the Frog Pond Wetland Preserve provide a refuge for resident and migratory wildlife as well as humans. Maintaining and enhancing the Frog Pond’s wildlife habitat value is a high priority to the District.</p>"
       },
       "geometry": {
         "type": "Point",
@@ -55,7 +58,8 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Monterey Bay Coastal Trail"
+        "title": "Monterey Bay Coastal Trail",
+        "description": "<p>The park district maintains portions of the cherished Monterey Bay Coastal Trail.</p>"
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +75,8 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Marina Dunes Natural Preserve"
+        "title": "Marina Dunes Natural Preserve",
+        "description": "<p>In 1983, the site of Marina Dunes Preserve was just an abandoned sand mining site with a lot of off-road vehicle damage. A proposal to convert these dunes into a large-scale resort hotel failed and the opportunity to purchase the property for coastal public access was realized. This property was purchased by the District in 1988 to enhance and protect public access to the Monterey Bay seashore and restore native vegetation to the site for more natural habitat conditions.</p>"
       },
       "geometry": {
         "type": "Point",
