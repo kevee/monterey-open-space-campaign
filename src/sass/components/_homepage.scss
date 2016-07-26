@@ -3,3 +3,13 @@
     margin-top: 0;
   }
 }
+
+#map {
+  margin-top: -20px;
+  margin-bottom: -15px;
+  min-height: 500px;
+  @include respond-to('md') {
+    min-height: 400px;
+    margin: 15px 0;
+  }
+}

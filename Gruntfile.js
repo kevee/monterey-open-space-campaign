@@ -72,6 +72,16 @@ module.exports = function (grunt) {
             dest: '_dist/_includes/'
           }
         ]
+      },
+      map : {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/js/',
+            src: ['*.json'],
+            dest: '_dist/js/'
+          }
+        ]
       }
     },
     watch: {

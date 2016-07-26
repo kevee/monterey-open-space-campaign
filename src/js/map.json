@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Garland Ranch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.76769733428954,
+          36.50911875309822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Palo Carona Regional park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.90704345703124,
+          36.53039845891683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Frog Pond Wetland Preserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83550357818602,
+          36.593659772583706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Monterey Bay Coastal Trail"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83872222900389,
+          36.62844389404877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Marina Dunes Natural Preserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.81185722351073,
+          36.688932059157814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Rancho Cañada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.88901901245117,
+          36.5400534449699
+        ]
+      }
+    }
+  ]
+}
