@@ -25,7 +25,7 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "title": "Palo Carona Regional park",
-        "descriptoin": "<p>Palo Corona Regional Park is one of Central Coast California’s most significant undeveloped open spaces. In the largest land conservation project in Monterey county history.</p>"
+        "description": "<p>Palo Corona Regional Park is one of Central Coast California’s most significant undeveloped open spaces. In the largest land conservation project in Monterey county history.</p>"
       },
       "geometry": {
         "type": "Point",
@@ -83,23 +83,6 @@
         "coordinates": [
           -121.81185722351073,
           36.688932059157814
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "title": "Rancho Cañada",
-        "description": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.88901901245117,
-          36.5400534449699
         ]
       }
     }
