@@ -1,0 +1,29 @@
+---
+layout: page
+---
+
+{{ content }}
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+      <form action="https://formspree.io/kevin+openspace@csumb.edu" method="POST">
+        <div class="form-group">
+          <label for="contact-name">Your name</label>
+          <input type="text" name="name" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email">Your email address</label>
+          <input type="email" id="contact-email" name="_replyto">
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email">Message</label>
+          <textarea id="contact-message" name="message"></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Send">
+      </form>
+    </div>
+  </div>
+</div>
