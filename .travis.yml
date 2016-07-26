@@ -7,7 +7,6 @@ node_js:
 before_script:
  - node --version
  - npm install grunt-cli -g
- - npm update -g
  - npm install
  - bundle install
  - git config --global user.name "Kevin Miller (via Travis CI)"
