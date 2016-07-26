@@ -92,8 +92,7 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Rancho Cañada",
-        "description": ""
+        "title": "Rancho Cañada"
       },
       "geometry": {
         "type": "Point",
