@@ -9,6 +9,7 @@ before_script:
  - npm install grunt-cli -g
  - npm update -g
  - npm install
+ - bundle install
  - git config --global user.name "Kevin Miller (via Travis CI)"
  - git config --global user.email "kevin@csumb.edu"
 
