@@ -48,6 +48,12 @@ module.exports = function (grunt) {
         endpoint : 'https://citizens-parks-open-space.prismic.io/api'
       }
     },
+    'mos-cta': {
+      cta : {
+        data : '_dist/_data/cta.json',
+        endpoint : 'https://citizens-parks-open-space.prismic.io/api'
+      }
+    },
     'gh-pages': {
       options: {
         base: '_dist',
@@ -98,6 +104,10 @@ module.exports = function (grunt) {
       all: {
         files: ['src/**'],
         tasks: ['default']
+      },
+      src: {
+        files: ['src/**'],
+        tasks: ['src']
       }
     },
     clean : ['_dist'],
@@ -143,8 +153,9 @@ module.exports = function (grunt) {
     },
   });
 
-  grunt.registerTask('default', ['copy', 'compass', 'uglify', 'cssmin', 'mos-endorsements', 'mos-homepage', 'mos-pages']);
+  grunt.registerTask('default', ['copy', 'compass', 'uglify', 'cssmin', 'mos-endorsements', 'mos-homepage', 'mos-cta', 'mos-pages']);
   grunt.registerTask('setup', ['bower', 'clean', 'default']);
+  grunt.registerTask('src', ['copy', 'compass', 'uglify', 'cssmin']);
 
   grunt.registerTask('deploy', ['default', 'gh-pages']);
 

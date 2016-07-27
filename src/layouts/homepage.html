@@ -13,28 +13,13 @@ title: Citizens for Parks &amp; Open Spaces
   </div>
 {% endif %}
 <div class="container content" id="main-content">
-  <div class="row" id="homepage-content">
+  <div class="row">
     <div class="col-md-9">
       {{ content }}
     </div>
-    <div class="col-md-3 subtract-top">
-      <h3 class="visible-xs">Highlighted parks</h3>
-      <div id="map"></div>
+    <div class="col-md-3">
+      {% include call-to-action.html %}
     </div>
-  </div>
-  <h2>How you can help</h2>
-  <div class="row extra-space vertical">
-    {% for action in page.pageData.actions.value %}
-      <div class="col-md-4">
-        <a href="{{ action.link.value }}">
-          <img src="{{ action.image.value.main.url }}" alt="{{ action.tagline.value }}" class="action-image">
-        </a>
-        <a href="{{ action.link.value }}" class="btn btn-lg btn-block btn-lime">
-          {{ action.tagline.value }}
-        </a>
-        <p>{{ action.label.value }}</p>
-      </div>
-    {% endfor %}
   </div>
   <div class="row extra-space vertical">
     {% for info in page.pageData.info.value %}
@@ -67,6 +52,7 @@ title: Citizens for Parks &amp; Open Spaces
   </div>
 </div>
 {% endcomment %}
+<div id="map"></div>
 <div class="modal fade" tabindex="-1" role="dialog" id="map-modal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

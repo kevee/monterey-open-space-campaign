@@ -2,16 +2,11 @@
   footer {
     margin-top: 0;
   }
-
-  .action-image {
-    margin-bottom: 15px;
-  }
 }
 
 #map {
-  margin-top: -20px;
-  margin-bottom: -15px;
   min-height: 500px;
+  margin-top: 15px;
   @include respond-to('md') {
     min-height: 400px;
     margin: 15px 0;
