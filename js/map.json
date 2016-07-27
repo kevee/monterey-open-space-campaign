@@ -7,7 +7,7 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Garland Ranch",
+        "title": "Garland Ranch Regional Park",
         "description": "<p>This park is home to a variety of landscapes that occur at elevations from 200 to 2,000 feet. From the willow covered banks of the Carmel River through the cottonwood-sycamore stands of the old floodplain, the trails ascend steeply. Atop the northern crest of the Santa Lucia Mountains, the trails encounter open oak savannas and spectacular vistas.</p>"
       },
       "geometry": {
@@ -58,7 +58,7 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Monterey Bay Coastal Trail",
+        "title": "Eolian Dunes",
         "description": "<p>The park district maintains portions of the cherished Monterey Bay Coastal Trail.</p>"
       },
       "geometry": {
@@ -83,6 +83,342 @@
         "coordinates": [
           -121.81185722351073,
           36.688932059157814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Locke-Paddon Community Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.80078506469727,
+          36.69001607460856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Vince DiMaggio Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.79752349853516,
+          36.69044623523481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Los Arboles Community Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.79650425910948,
+          36.677652229865416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "South Monterey Bay Dunes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.82992458343506,
+          36.647383830906776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Robert's Lake Open Space"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85861349105835,
+          36.6075356865949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Laguna Grande Regional Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85472965240479,
+          36.60328101614519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Del Monte Dunes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.86399936676025,
+          36.605675373733554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Del Monte Beach Open Space"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.87464237213135,
+          36.602574752590314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "San Carlos Beach Community Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.89627170562744,
+          36.609835177981346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Elmarie Dyke Open Space"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.91819608211517,
+          36.621882703050005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Rocky Shores"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.93815708160402,
+          36.628202810300756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Lynn \"Rip\" Van Winkle Open Space"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.93073272705077,
+          36.61025717457287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Thomas Open Space"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.79409027099608,
+          36.5248118093867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Laidlaw-Apte Pine Forest Preserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.91854476928711,
+          36.50128828018987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Carmel Valley Community Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.73693776130676,
+          36.48192429488703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Cachagua Community Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.6596472263336,
+          36.39813336359849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Mill Creek Redwood Preserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.81743621826172,
+          36.37015703595664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Blomquist Redwood Preserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.58260345458984,
+          36.43177971506432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Flavin Ranch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.68079376220702,
+          36.39406580430774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Whistler Wilson Ranch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.9163131713867,
+          36.51929373480698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "title": "Joyce Stevens Monterey Pine Forest Preserve"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.84816360473633,
+          36.568873301374616
         ]
       }
     }
