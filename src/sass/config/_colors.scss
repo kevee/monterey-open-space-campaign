@@ -8,8 +8,8 @@ $blue:(
 );
 
 $green:(
-  dark:      #7b8e2d,
-  main:      #97a94c,
+  dark:      #859b6b,
+  main:      #859b6b,
   bright:    #b8c389,
   highlight: #e3eac2
 );
@@ -34,6 +34,11 @@ $indicators: (
   alert: #E89602,
   success: #189A77
 );
+
+$campaign-green: #859b6b;
+$campaign-tan: #ebe9d4;
+$campaign-brick: #b98f64;
+$campaign-blue: #b7b5c8;
 
 $white          : #fff;
 $black          : #000;

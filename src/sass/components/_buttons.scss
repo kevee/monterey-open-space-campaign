@@ -8,4 +8,14 @@ a.btn, button.btn {
     background: color($blue, 'dark');
     color: $white;
   }
+
+  &.btn-campaign-green {
+    background: $campaign-green;
+    color: $white;
+  }
+
+  &.btn-campaign-blue {
+    background: $campaign-blue;
+    color: $white;
+  }
 }
