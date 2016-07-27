@@ -3,7 +3,14 @@ layout: html
 ---
 {% include header.html %}
 {% if page.pageData.hero %}
-<div class="hero-image" style="background-image: url('{{ page.pageData.hero.value[0].heroImage.value.main.url}}');">
+<div class="hero-image hidden-xs hidden-sm" style="background-image: url('{{ page.pageData.hero.value[0].heroImage.value.main.url}}');">
+  <div class="hero-title">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+</div>
+<div class="hero-image visible-xs visible-sm" style="background-image: url('{{ page.pageData.hero.value[0].heroImageMobile.value.main.url}}');">
   <div class="hero-title">
     <div class="container">
       <h1>{{ page.title }}</h1>
