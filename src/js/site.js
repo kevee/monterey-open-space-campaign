@@ -13,7 +13,7 @@
 })(jQuery);
 
 var mapReady = function() {
-  var centerLatLng = new google.maps.LatLng(36.6151843,-121.8525035);
+  var centerLatLng = new google.maps.LatLng(36.5651298,-121.7649207);
   var mapOptions = {
     zoom: 11,
     center: centerLatLng,
@@ -28,5 +28,8 @@ var mapReady = function() {
     $('#map-modal .modal-title').html(event.feature.getProperty('title'));
     $('#map-modal .modal-body').html(event.feature.getProperty('description'));
     $('#map-modal').modal('show');
+  });
+  map.addListener('center_changed', function() {
+    console.log(map.getCenter());
   });
 };

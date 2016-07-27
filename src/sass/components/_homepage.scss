@@ -5,7 +5,7 @@
 }
 
 #map {
-  min-height: 500px;
+  min-height: 700px;
   margin-top: 15px;
   @include respond-to('md') {
     min-height: 400px;

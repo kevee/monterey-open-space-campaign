@@ -21,15 +21,6 @@ title: Citizens for Parks &amp; Open Spaces
       {% include call-to-action.html %}
     </div>
   </div>
-  <div class="row extra-space vertical">
-    {% for info in page.pageData.info.value %}
-      <div class="col-md-4">
-        <a href="{{ info.link.value }}" class="btn btn-lg btn-block btn-blue">
-          {{ info.tagline.value }}
-        </a>
-      </div>
-    {% endfor %}
-  </div>
 </div>
 {% comment %}
 <div class="container">
@@ -52,6 +43,9 @@ title: Citizens for Parks &amp; Open Spaces
   </div>
 </div>
 {% endcomment %}
+<div class="container">
+  <h2>Vote YES to protect these local spaces</h2>
+</div>
 <div id="map"></div>
 <div class="modal fade" tabindex="-1" role="dialog" id="map-modal">
   <div class="modal-dialog" role="document">
@@ -69,4 +63,15 @@ title: Citizens for Parks &amp; Open Spaces
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<div class="container">
+  <div class="row extra-space vertical">
+    {% for info in page.pageData.info.value %}
+      <div class="col-md-4">
+        <a href="{{ info.link.value }}" class="btn btn-lg btn-block btn-blue">
+          {{ info.tagline.value }}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
 {% include footer.html %}
