@@ -2,7 +2,7 @@
 layout: html
 ---
 {% include header.html %}
-{% if page.pageData.hero %}
+{% if page.pageData.hero.value[0].heroImage %}
 <div class="hero-image hidden-xs hidden-sm" style="background-image: url('{{ page.pageData.hero.value[0].heroImage.value.main.url}}');">
   <div class="hero-title">
     <div class="container">
