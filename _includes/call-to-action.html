@@ -1,3 +1,7 @@
+<button type="button" class="btn btn-blue btn-block" data-toggle="modal" data-target="#mail-form-modal">
+  Join our mailing list
+</button>
+{% include mail-form.html %}
 {% for action in site.data.cta %}
   <div class="call-to-action extra-space vertical">
     <a href="{{ action.data['call-to-action.link'].value }}">
