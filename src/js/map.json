@@ -108,22 +108,6 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "title": "Vince DiMaggio Park"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.79752349853516,
-          36.69044623523481
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
         "title": "Los Arboles Community Park"
       },
       "geometry": {
