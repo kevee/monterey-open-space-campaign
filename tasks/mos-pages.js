@@ -33,7 +33,10 @@ module.exports = function(grunt) {
             });
             var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
             if(typeof that.data.content !== 'undefined') {
-              content += pretty(page.getSliceZone(that.data.content).asHtml());
+              var slices = page.getSliceZone(that.data.content);
+              if(slices) {
+                content += pretty(slices.asHtml());
+              }
             }
             grunt.file.write(that.data.target + '/' + page.uid + '.html', content);
             grunt.log.oklns('Saved ' + that.data.target + page.uid + '.html');
