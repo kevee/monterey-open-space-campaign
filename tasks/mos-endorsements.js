@@ -17,6 +17,8 @@ module.exports = function(grunt) {
         .query(Prismic.Predicates.at("document.type", "endorsement")).submit(function (err, response) {
           _.each(response.results, function(endorsement) {
             endorsement.sort = endorsement.data['endorsement.lastName'].value + endorsement.data['endorsement.firstName'].value;
+            endorsement.url = endorsement.data['endorsement.firstName'].value.replace(/\s/g, '-') + '-' + endorsement.data['endorsement.lastName'].value.replace(/\s/g, '-');
+            endorsement.url = endorsement.url.toLowerCase();
             endorsements.push(endorsement);
 
             var meta = {
@@ -29,9 +31,8 @@ module.exports = function(grunt) {
               meta.pageData[index] = data;
             });
             var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
-            var filename = endorsement.data['endorsement.firstName'].value + '-' + endorsement.data['endorsement.lastName'].value;
-            grunt.file.write(that.data.target + '/' + filename.toLowerCase() + '.html', content);
-            grunt.log.oklns('Saved ' + that.data.target + '/' + filename.toLowerCase() + '.html');
+            grunt.file.write(that.data.target + '/' + endorsement.url + '.html', content);
+            grunt.log.oklns('Saved ' + that.data.target + '/' + endorsement.url + '.html');
 
           });
           endorsements = _.sortBy(endorsements, 'sort');
