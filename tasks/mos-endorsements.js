@@ -11,9 +11,11 @@ module.exports = function(grunt) {
     var that = this,
         endorsements = [],
         done = this.async();
+
     Prismic.Api(that.data.endpoint, function (err, Api) {
       Api.form('everything')
         .ref(Api.master())
+        .pageSize(2000)
         .query(Prismic.Predicates.at("document.type", "endorsement")).submit(function (err, response) {
           _.each(response.results, function(endorsement) {
             endorsement.sort = endorsement.data['endorsement.lastName'].value + endorsement.data['endorsement.firstName'].value;
