@@ -7,12 +7,23 @@ layout: page
 <div class="row">
   {% for endorsement in site.data.endorsements %}
     {% if endorsement.data['endorsement.featured'].value == 'yes' %}
-    {% cycle '', '', '</div><div class="row">' %}
+    {% cycle '', '', '', '', '</div><div class="row">' %}
       <div class="col-md-3">
-        <img src="{{ endorsement.data['endorsement.image'].value.main.url }}" alt=""/>
+        {% if endorsement.data['endorsement.image'].value.main.url %}
+          <img src="{{ endorsement.data['endorsement.image'].value.main.url }}" alt=""/>
+        {% endif %}
         <h4>
-          {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+          <a href="/endorsement/{{ endorsement.url }}"/>
+            {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+          </a>
         </h4>
+        {% if endorsement.data['endorsement.title'].value %}
+        <p>
+          <em>
+            {{ endorsement.data['endorsement.title'].value }}
+          </em>
+        </p>
+        {% endif %}
         {% if endorsement.data['endorsement.quote'].value %}
           <p class="endorsement-quote">{{ endorsement.data['endorsement.quote'].value }}
         {% endif %}
@@ -26,6 +37,11 @@ layout: page
   {% for endorsement in site.data.endorsements %}
     <li>
       {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+      {% if endorsement.data['endorsement.title'].value %}
+      - <em>
+          {{ endorsement.data['endorsement.title'].value }}
+      </em>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>
