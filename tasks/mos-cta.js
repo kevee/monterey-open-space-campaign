@@ -19,7 +19,6 @@ module.exports = function(grunt) {
             cta.push(action);
           });
           cta = _.sortBy(cta, 'sort');
-          console.log(cta);
           grunt.file.write(that.data.data, JSON.stringify(cta));
           done();
       });
