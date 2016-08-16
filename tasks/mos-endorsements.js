@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 
             var meta = {
               layout: 'endorsement-page',
-              title: 'Endorsement: ' + endorsement.data['endorsement.firstName'].value + ' ' + endorsement.data['endorsement.lastName'].value,
+              title: 'Join ' + endorsement.data['endorsement.firstName'].value + ' ' + endorsement.data['endorsement.lastName'].value + ' in support of Measure E',
               pageData: {}
             };
             _.each(endorsement.data, function(data, index) {
