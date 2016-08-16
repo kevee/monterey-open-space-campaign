@@ -26,6 +26,7 @@ module.exports = function (grunt) {
     'mos-endorsements': {
       endorsements : {
         data : '_dist/_data/endorsements.json',
+        target : '_dist/endorsements',
         endpoint : 'https://citizens-parks-open-space.prismic.io/api'
       }
     },

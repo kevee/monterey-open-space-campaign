@@ -1,0 +1,21 @@
+---
+layout: page
+---
+<div class="page-header">
+  <h1>Join {{ page.pageData.firstName.value }} {{ page.pageData.lastName.value }} in supporting Measure E</h1>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    {% if page.pageData.quote %}
+      <blockquote>
+        {{ page.pageData.quote.value }}
+      </blockquote>
+    {% endif %}
+    <p>Please join {{ page.pageData.firstName.value }} and Citizens for Parks and Open Space by voting for Measure E.</p>
+  </div>
+  <div class="col-md-3">
+    {% if page.pageData.image %}
+      <img src="{{page.pageData.image.value.main.url }}" alt=""/>
+    {% endif %}
+  </div>
+</div>
