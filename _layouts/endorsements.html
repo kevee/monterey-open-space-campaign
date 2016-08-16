@@ -36,7 +36,9 @@ layout: page
 <ul>
   {% for endorsement in site.data.endorsements %}
     <li>
-      {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+      <a href="/endorsement/{{ endorsement.url }}"/>
+        {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+      </a>
       {% if endorsement.data['endorsement.title'].value %}
       - <em>
           {{ endorsement.data['endorsement.title'].value }}
