@@ -29,6 +29,23 @@ layout: page
       </div>
     {% endif %}
   {% endfor %}
+  {% for endorsement in site.data.org_endorsements %}
+    {% if endorsement.Featured %}
+    {% cycle '', '', '', '', '</div><div class="row">' %}
+      <div class="col-sm-3">
+        {% if endorsement.Logo %}
+          <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+            <img src="{{ endorsement.Logo[0]url }}" alt=""/>
+          </a>
+        {% endif %}
+        <h4>
+          <a href="/endorsement/{{ endorsement.Slug }}"/>
+            {{ endorsement.Name }}
+          </a>
+        </h4>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
 <h2>Elected officials</h2>
   <ul>
@@ -44,6 +61,18 @@ layout: page
         </em>
         {% endif %}
       </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+<h2>Community organizations</h2>
+  <ul>
+    {% for endorsement in site.data.org_endorsements %}
+      {%if endorsement.Name %}
+        <li>
+          <a href="/endorsement/{{ endorsement.Slug }}"/>
+            {{ endorsement.Name }}
+          </a>
+        </li>
       {% endif %}
     {% endfor %}
   </ul>
