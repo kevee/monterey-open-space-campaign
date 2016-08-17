@@ -2,7 +2,7 @@
 
 module.exports = function(grunt) {
 
-  var Prismic = require('prismic.io').Prismic,
+  var Airtable = require('airtable'),
       Promise = require('es6-promise').polyfill(),
       YAML = require('yamljs'),
       _ = require('underscore');
@@ -11,36 +11,34 @@ module.exports = function(grunt) {
     var that = this,
         endorsements = [],
         done = this.async();
+    var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appJFr26GTasPvrXf');
 
-    Prismic.Api(that.data.endpoint, function (err, Api) {
-      Api.form('everything')
-        .ref(Api.master())
-        .pageSize(2000)
-        .query(Prismic.Predicates.at("document.type", "endorsement")).submit(function (err, response) {
-          _.each(response.results, function(endorsement) {
-            endorsement.sort = endorsement.data['endorsement.lastName'].value + endorsement.data['endorsement.firstName'].value;
-            endorsement.url = endorsement.data['endorsement.firstName'].value.replace(/\s/g, '-') + '-' + endorsement.data['endorsement.lastName'].value.replace(/\s/g, '-');
-            endorsement.url = endorsement.url.toLowerCase();
-            endorsements.push(endorsement);
-
-            var meta = {
-              layout: 'endorsement-page',
-              title: 'Join ' + endorsement.data['endorsement.firstName'].value + ' ' + endorsement.data['endorsement.lastName'].value + ' in support of Measure E',
-              pageData: {}
-            };
-            _.each(endorsement.data, function(data, index) {
-              index = index.split('.').pop();
-              meta.pageData[index] = data;
-            });
-            var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
-            grunt.file.write(that.data.target + '/' + endorsement.url + '.html', content);
-            grunt.log.oklns('Saved ' + that.data.target + '/' + endorsement.url + '.html');
-
-          });
-          endorsements = _.sortBy(endorsements, 'sort');
-          grunt.file.write(that.data.data, JSON.stringify(endorsements));
-          done();
-      });
+    base('Endorsements').select({
+        maxRecords: 1500,
+        view: "Main View",
+        sort: [
+          {field: "Last name"},
+          {field: "First name"},
+        ]
+    }).eachPage(function page(records, fetchNextPage) {
+        records.forEach(function(record) {
+          endorsements.push(record.fields);
+          var meta = {
+            layout: 'endorsement-page',
+            title: 'Join ' + record.get('First name') + ' ' + record.get('Last name') + ' in support of Measure E',
+            pageData: record.fields
+          };
+          var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
+          grunt.file.write(that.data.target + '/' + record.get('Slug') + '.html', content);
+          grunt.log.oklns('Saved ' + that.data.target + '/' + record.get('Slug') + '.html');
+        });
+        fetchNextPage();
+    }, function(error) {
+        grunt.file.write(that.data.data, JSON.stringify(endorsements));
+        done();
+        if (error) {
+            console.log(error);
+        }
     });
   });
 };

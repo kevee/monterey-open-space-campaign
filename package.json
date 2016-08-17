@@ -2,6 +2,7 @@
   "name": "monterey-open-space-campaign",
   "description": "Campaign website for Monterey Open Space and Parks",
   "dependencies": {
+    "airtable": "^0.4.2",
     "bower": "^1.7.7",
     "compass": "^0.1.1",
     "es6-promise": "^3.2.1",
