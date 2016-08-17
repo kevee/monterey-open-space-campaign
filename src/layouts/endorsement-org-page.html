@@ -1,0 +1,21 @@
+---
+layout: page
+---
+<div class="row">
+  <div class="col-md-9">
+    {% if page.pageData.Quote %}
+      <blockquote>
+        {{ page.pageData.Quote }}
+        <footer><cite>{{ page.pageData.Name }}</cite></footer>
+      </blockquote>
+    {% endif %}
+    <p>Please join {{ page.pageData.Name }} and Citizens for Parks and Open Space by voting for Measure E.</p>
+    <p>The Monterey Peninsula Regional Parks District will have a November Ballot Measure, Measure E, to replace critical local funding to acquire coastal lands, beaches, creeks, rivers, wildlife habitat; maintain/improve neighborhood parks, trails, playgrounds; and increase recreational access to natural areas. The funding, currently $25.26 per year for single family homes, would be replaced at the same rate, ultimately providing $1.2 million annually for local investment.</p>
+    <p>Since its formation in 1972, the Monterey Peninsula Regional Park District has been entrusted to acquire and protect lands for the express purpose of preserving open space and providing recreational opportunity. Since then, the District has protected approximately 13,050 acres of open space, acquiring or helping to acquire a total of 24 parks and open spaces.</p>
+  </div>
+  <div class="col-md-3">
+    {% if page.pageData.Logo %}
+      <img src="{{page.pageData.Logo[0]url }}" alt=""/>
+    {% endif %}
+  </div>
+</div>

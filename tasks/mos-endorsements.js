@@ -35,7 +35,33 @@ module.exports = function(grunt) {
         fetchNextPage();
     }, function(error) {
         grunt.file.write(that.data.data, JSON.stringify(endorsements));
-        done();
+        var org_endorsements = [];
+        base('Organizations').select({
+            maxRecords: 1500,
+            view: "Main View",
+            sort: [
+              {field: "Name"},
+            ]
+        }).eachPage(function page(records, fetchNextPage) {
+            records.forEach(function(record) {
+              org_endorsements.push(record.fields);
+              var meta = {
+                layout: 'endorsement-org-page',
+                title: 'Join ' + record.get('Name') + ' in support of Measure E',
+                pageData: record.fields
+              };
+              var content = '---' + "\n" + YAML.stringify(meta) + '---' + "\n";
+              grunt.file.write(that.data.target + '/' + record.get('Slug') + '.html', content);
+              grunt.log.oklns('Saved ' + that.data.target + '/' + record.get('Slug') + '.html');
+            });
+            fetchNextPage();
+        }, function(error) {
+            grunt.file.write(that.data.dataorgs, JSON.stringify(org_endorsements));
+            done();
+            if (error) {
+                console.log(error);
+            }
+        });
         if (error) {
             console.log(error);
         }
