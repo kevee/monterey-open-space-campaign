@@ -6,44 +6,78 @@ layout: page
 
 <div class="row">
   {% for endorsement in site.data.endorsements %}
-    {% if endorsement.data['endorsement.featured'].value == 'yes' %}
+    {% if endorsement.Featured %}
     {% cycle '', '', '', '', '</div><div class="row">' %}
-      <div class="col-md-3">
-        {% if endorsement.data['endorsement.image'].value.main.url %}
-          <img src="{{ endorsement.data['endorsement.image'].value.main.url }}" alt=""/>
+      <div class="col-sm-3">
+        {% if endorsement.Headshot %}
+          <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+            <img src="{{ endorsement.Headshot[0]url }}" alt=""/>
+          </a>
         {% endif %}
         <h4>
-          <a href="/endorsement/{{ endorsement.url }}"/>
-            {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+          <a href="/endorsement/{{ endorsement.Slug }}"/>
+            {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
           </a>
         </h4>
-        {% if endorsement.data['endorsement.title'].value %}
+        {% if endorsement.Title %}
         <p>
           <em>
-            {{ endorsement.data['endorsement.title'].value }}
+            {{ endorsement.Title }}
           </em>
         </p>
-        {% endif %}
-        {% if endorsement.data['endorsement.quote'].value %}
-          <p class="endorsement-quote">{{ endorsement.data['endorsement.quote'].value }}
         {% endif %}
       </div>
     {% endif %}
   {% endfor %}
 </div>
-
-<h2>All endorsements</h2>
+<h2>Elected officials</h2>
+  <ul>
+    {% for endorsement in site.data.endorsements %}
+      {% if endorsement.Type == "Local official" %}
+      <li>
+        <a href="/endorsement/{{ endorsement.Slug }}"/>
+          {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+        </a>
+        {% if endorsement.Title %}
+        - <em>
+            {{ endorsement.Title }}
+        </em>
+        {% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+<h2>Local leaders</h2>
 <ul>
   {% for endorsement in site.data.endorsements %}
+    {% if endorsement.Type == "Local leader" %}
     <li>
-      <a href="/endorsement/{{ endorsement.url }}"/>
-        {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
+      <a href="/endorsement/{{ endorsement.Slug }}"/>
+        {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
       </a>
-      {% if endorsement.data['endorsement.title'].value %}
+      {% if endorsement.Title %}
       - <em>
-          {{ endorsement.data['endorsement.title'].value }}
+          {{ endorsement.Title }}
       </em>
       {% endif %}
     </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+<h2>Citizens</h2>
+<ul>
+  {% for endorsement in site.data.endorsements %}
+    {% if endorsement.Type == "Citizen" %}
+    <li>
+      <a href="/endorsement/{{ endorsement.Slug }}"/>
+        {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+      </a>
+      {% if endorsement.Title %}
+      - <em>
+          {{ endorsement.Title }}
+      </em>
+      {% endif %}
+    </li>
+    {% endif %}
   {% endfor %}
 </ul>
