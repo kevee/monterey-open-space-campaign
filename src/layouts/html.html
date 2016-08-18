@@ -4,6 +4,12 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="/css/style.min.css?_v=2"/>
+    {% if page.pageData.Headshot %}
+      <meta property="og:image" content="{{page.pageData.Headshot[0]url }}" />
+    {% endif %}
+    {% if page.pageData['First name'] %}
+      <meta property="og:description" content="Join {{ page.pageData['First name'] }} {{ page.pageData['Last name'] }} in supporing Measure E to Preserve Local Parks and Open Space." />
+    {% endif %}
   </head>
   <body{%if page.isHome %} class="homepage"{% endif %}>
     {{ content }}
