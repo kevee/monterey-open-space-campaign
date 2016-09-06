@@ -11,7 +11,7 @@ layout: page
       <div class="col-sm-3">
         {% if endorsement.Headshot %}
           <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
-            <img src="{{ endorsement.Headshot[0]url }}" alt=""/>
+            <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
           </a>
         {% endif %}
         <h4>
