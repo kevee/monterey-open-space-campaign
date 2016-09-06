@@ -7,11 +7,11 @@ layout: page
 <div class="row">
   {% for endorsement in site.data.endorsements %}
     {% if endorsement.Featured %}
-    {% cycle '', '', '', '', '</div><div class="row">' %}
+    {% cycle 'people': '', '', '', '', '</div><div class="row">' %}
       <div class="col-sm-3">
         {% if endorsement.Headshot %}
           <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
-            <img src="{{ endorsement.Headshot[0]url }}" alt=""/>
+            <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
           </a>
         {% endif %}
         <h4>
@@ -29,9 +29,11 @@ layout: page
       </div>
     {% endif %}
   {% endfor %}
+</div>
+<div class="row">
   {% for endorsement in site.data.org_endorsements %}
     {% if endorsement.Featured %}
-    {% cycle '', '', '', '', '</div><div class="row">' %}
+    {% cycle 'orgs': '', '', '', '', '</div><div class="row">' %}
       <div class="col-sm-3">
         {% if endorsement.Logo %}
           <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
