@@ -7,26 +7,80 @@ layout: page
 <div class="row">
   {% for endorsement in site.data.endorsements %}
     {% if endorsement.Featured %}
-    {% cycle 'people': '', '', '', '', '</div><div class="row">' %}
-      <div class="col-sm-3">
-        {% if endorsement.Headshot %}
-          <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
-            <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
-          </a>
-        {% endif %}
-        <h4>
-          <a href="/endorsement/{{ endorsement.Slug }}"/>
-            {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
-          </a>
-        </h4>
-        {% if endorsement.Title %}
-        <p>
-          <em>
-            {{ endorsement.Title }}
-          </em>
-        </p>
-        {% endif %}
-      </div>
+      {% if endorsement.Type == "Federal official" %}
+        {% cycle 'people': '', '', '', '', '</div><div class="row">' %}
+        <div class="col-sm-3">
+          {% if endorsement.Headshot %}
+            <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+              <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
+            </a>
+          {% endif %}
+          <h4>
+            <a href="/endorsement/{{ endorsement.Slug }}"/>
+              {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+            </a>
+          </h4>
+          {% if endorsement.Title %}
+          <p>
+            <em>
+              {{ endorsement.Title }}
+            </em>
+          </p>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% for endorsement in site.data.endorsements %}
+    {% if endorsement.Featured %}
+      {% if endorsement.Type == "State official" %}
+        {% cycle 'people': '', '', '', '', '</div><div class="row">' %}
+        <div class="col-sm-3">
+          {% if endorsement.Headshot %}
+            <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+              <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
+            </a>
+          {% endif %}
+          <h4>
+            <a href="/endorsement/{{ endorsement.Slug }}"/>
+              {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+            </a>
+          </h4>
+          {% if endorsement.Title %}
+          <p>
+            <em>
+              {{ endorsement.Title }}
+            </em>
+          </p>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% for endorsement in site.data.endorsements %}
+    {% if endorsement.Featured %}
+      {% if endorsement.Type == "Local official" %}
+        {% cycle 'people': '', '', '', '', '</div><div class="row">' %}
+        <div class="col-sm-3">
+          {% if endorsement.Headshot %}
+            <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+              <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
+            </a>
+          {% endif %}
+          <h4>
+            <a href="/endorsement/{{ endorsement.Slug }}"/>
+              {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+            </a>
+          </h4>
+          {% if endorsement.Title %}
+          <p>
+            <em>
+              {{ endorsement.Title }}
+            </em>
+          </p>
+          {% endif %}
+        </div>
+      {% endif %}
     {% endif %}
   {% endfor %}
 </div>
