@@ -106,6 +106,34 @@ layout: page
 <h2>Elected officials</h2>
   <ul>
     {% for endorsement in site.data.endorsements %}
+      {% if endorsement.Type == "Federal official" %}
+      <li>
+        <a href="/endorsement/{{ endorsement.Slug }}"/>
+          {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+        </a>
+        {% if endorsement.Title %}
+        - <em>
+            {{ endorsement.Title }}
+        </em>
+        {% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+    {% for endorsement in site.data.endorsements %}
+      {% if endorsement.Type == "State official" %}
+      <li>
+        <a href="/endorsement/{{ endorsement.Slug }}"/>
+          {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+        </a>
+        {% if endorsement.Title %}
+        - <em>
+            {{ endorsement.Title }}
+        </em>
+        {% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+    {% for endorsement in site.data.endorsements %}
       {% if endorsement.Type == "Local official" %}
       <li>
         <a href="/endorsement/{{ endorsement.Slug }}"/>
