@@ -21,6 +21,12 @@ a {
   }
 }
 
+blockquote {
+  a {
+    color: $link !important;
+  }
+}
+
 #{headings()} {
   font-family: $gothic-font;
   font-weight: 400;
