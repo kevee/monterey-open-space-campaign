@@ -1,0 +1,41 @@
+---
+layout: html
+---
+{% include header.html %}
+{% if page.pageData.hero.value[0].heroImage %}
+<div class="hero-image hidden-xs hidden-sm" style="background-image: url('{{ page.pageData.hero.value[0].heroImage.value.main.url}}');">
+  <div class="hero-title">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+</div>
+<div class="hero-image visible-xs visible-sm" style="background-image: url('{{ page.pageData.hero.value[0].heroImageMobile.value.main.url}}');">
+  <div class="hero-title">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+</div>
+<div class="container content" id="main-content">
+{% else %}
+<div class="container content" id="main-content">
+  <div class="page-title">
+    <h1>{{ page.title }}</h1>
+  </div>
+{% endif %}
+  <div class="row">
+    <div class="col-md-9">
+      {{ content }}
+      <h2>Join the phone banks on Facebook</h2>
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevents%2F192580371151456%2F&width=500" width="500" height="458" style="border:none;overflow:hidden; margin-bottom: 15px; display: block;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevents%2F1792613117649451%2F&width=500" width="500" height="458" style="border:none;overflow:hidden; margin-bottom: 15px; display: block;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevents%2F1807725266137842%2F&width=500" width="500" height="458" style="border:none;overflow:hidden; margin-bottom: 15px; display: block;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevents%2F1139949369429992%2F&width=500" width="500" height="458" style="border:none;overflow:hidden; margin-bottom: 15px; display: block;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    </div>
+    <div class="col-md-3">
+      {% include call-to-action.html %}
+    </div>
+  </div>
+</div>
+{% include footer.html %}
