@@ -235,15 +235,5 @@ title: Citizens for Parks &amp; Open Spaces
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<div class="container">
-  <div class="row extra-space vertical">
-    {% for info in page.pageData.info.value %}
-      <div class="col-md-4">
-        <a href="{{ info.link.value }}" class="btn btn-lg btn-block btn-blue extra-space vertical">
-          {{ info.tagline.value }}
-        </a>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+
 {% include footer.html %}
