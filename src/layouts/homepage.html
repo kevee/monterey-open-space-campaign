@@ -20,52 +20,199 @@ title: Citizens for Parks &amp; Open Spaces
   </div>
 {% endif %}
 <div class="container content" id="main-content">
-  <div class="row">
-    <div class="col-md-9">
-      
-      <blockquote>
-        "Measure E is a good deal, and we enthusiastically endorse a yes vote."
-        <footer>
-          <cite><a href="http://www.montereyherald.com/article/NF/20160928/LOCAL1/160929512">Monterey Herald</a></cite>
-        </footer>
-      </blockquote>
-
-      <blockquote>
-        "One of the [park] district’s jobs is to protect prime land in a place with some of the highest property values on Earth. Another is to create access to this property, keeping the trails clear and safe. It’s no small feat."
-        <footer>
-          <cite><a href="http://www.montereycountyweekly.com/news/cover/weekly-endorsements-on-ballot-measures/article_95937cb6-8b3a-11e6-9c1e-4fb406cc0cb5.html">Monterey County Weekly</a></cite>
-        </footer>
-      </blockquote>
-      {{ content }}
-    </div>
-    <div class="col-md-3">
-      {% include call-to-action.html %}
-    </div>
-  </div>
-</div>
-{% comment %}
-<div class="container">
-  <h3><a href="endorsements">Endorsements</a></h3>
+  <h2>Thank you to our endorsers.</h2>
   <div class="row">
     {% for endorsement in site.data.endorsements %}
-      {% if endorsement.data['endorsement.featured'].value == 'yes' %}
-      {% cycle '', '', '</div><div class="row">' %}
-        <div class="col-md-3">
-          <img src="{{ endorsement.data['endorsement.image'].value.main.url }}" alt=""/>
-          <h4>
-            {{ endorsement.data['endorsement.firstName'].value }} {{ endorsement.data['endorsement.lastName'].value }}
-          </h4>
-          {% if endorsement.data['endorsement.quote'].value %}
-            <p class="endorsement-quote">{{ endorsement.data['endorsement.quote'].value }}
+      {% if endorsement.Featured %}
+        {% if endorsement.Type == "Federal official" %}
+          {% cycle 'people': '', '', '', '', '</div><div class="row">' %}
+          <div class="col-sm-3">
+            {% if endorsement.Headshot %}
+              <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+                <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
+              </a>
+            {% endif %}
+            <h4>
+              <a href="/endorsement/{{ endorsement.Slug }}"/>
+                {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+              </a>
+            </h4>
+            {% if endorsement.Title %}
+            <p>
+              <em>
+                {{ endorsement.Title }}
+              </em>
+            </p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for endorsement in site.data.endorsements %}
+      {% if endorsement.Featured %}
+        {% if endorsement.Type == "State official" %}
+          {% cycle 'people': '', '', '', '', '</div><div class="row">' %}
+          <div class="col-sm-3">
+            {% if endorsement.Headshot %}
+              <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+                <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
+              </a>
+            {% endif %}
+            <h4>
+              <a href="/endorsement/{{ endorsement.Slug }}"/>
+                {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+              </a>
+            </h4>
+            {% if endorsement.Title %}
+            <p>
+              <em>
+                {{ endorsement.Title }}
+              </em>
+            </p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for endorsement in site.data.endorsements %}
+      {% if endorsement.Featured %}
+        {% if endorsement.Type == "Local official" %}
+          {% cycle 'people': '', '', '', '', '</div><div class="row">' %}
+          <div class="col-sm-3">
+            {% if endorsement.Headshot %}
+              <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+                <img src="{{ endorsement.Headshot[0].thumbnails.large.url }}" alt=""/>
+              </a>
+            {% endif %}
+            <h4>
+              <a href="/endorsement/{{ endorsement.Slug }}"/>
+                {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+              </a>
+            </h4>
+            {% if endorsement.Title %}
+            <p>
+              <em>
+                {{ endorsement.Title }}
+              </em>
+            </p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="row">
+    {% for endorsement in site.data.org_endorsements %}
+      {% if endorsement.Featured %}
+      {% cycle 'orgs': '', '', '', '', '</div><div class="row">' %}
+        <div class="col-sm-3">
+          {% if endorsement.Logo %}
+            <a href="/endorsement/{{ endorsement.Slug }}" class="thumbnail">
+              <img src="{{ endorsement.Logo[0]url }}" alt=""/>
+            </a>
           {% endif %}
+          <h4>
+            <a href="/endorsement/{{ endorsement.Slug }}"/>
+              {{ endorsement.Name }}
+            </a>
+          </h4>
         </div>
       {% endif %}
     {% endfor %}
   </div>
-</div>
-{% endcomment %}
+  <h2>Elected officials</h2>
+    <ul>
+      {% for endorsement in site.data.endorsements %}
+        {% if endorsement.Type == "Federal official" %}
+        <li>
+          <a href="/endorsement/{{ endorsement.Slug }}"/>
+            {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+          </a>
+          {% if endorsement.Title %}
+          - <em>
+              {{ endorsement.Title }}
+          </em>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+      {% for endorsement in site.data.endorsements %}
+        {% if endorsement.Type == "State official" %}
+        <li>
+          <a href="/endorsement/{{ endorsement.Slug }}"/>
+            {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+          </a>
+          {% if endorsement.Title %}
+          - <em>
+              {{ endorsement.Title }}
+          </em>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+      {% for endorsement in site.data.endorsements %}
+        {% if endorsement.Type == "Local official" %}
+        <li>
+          <a href="/endorsement/{{ endorsement.Slug }}"/>
+            {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+          </a>
+          {% if endorsement.Title %}
+          - <em>
+              {{ endorsement.Title }}
+          </em>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  <h2>Community organizations</h2>
+    <ul>
+      {% for endorsement in site.data.org_endorsements %}
+        {%if endorsement.Name %}
+          <li>
+            <a href="/endorsement/{{ endorsement.Slug }}"/>
+              {{ endorsement.Name }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  <h2>Community leaders</h2>
+  <ul>
+    {% for endorsement in site.data.endorsements %}
+      {% if endorsement.Type == "Local leader" %}
+      <li>
+        <a href="/endorsement/{{ endorsement.Slug }}"/>
+          {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+        </a>
+        {% if endorsement.Title %}
+        - <em>
+            {{ endorsement.Title }}
+        </em>
+        {% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <ul>
+    {% for endorsement in site.data.endorsements %}
+      {% if endorsement.Type == "Citizen" %}
+      <li>
+        <a href="/endorsement/{{ endorsement.Slug }}"/>
+          {{ endorsement['First name'] }} {{ endorsement['Last name'] }}
+        </a>
+        {% if endorsement.Title %}
+        - <em>
+            {{ endorsement.Title }}
+        </em>
+        {% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
 <div class="container">
-  <h2>Vote YES to protect these local spaces</h2>
+  <h2>You have helped protect these local spaces</h2>
 </div>
 <div id="map"></div>
 <div class="modal fade" tabindex="-1" role="dialog" id="map-modal">
